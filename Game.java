@@ -13,8 +13,6 @@ public class Game
 
             int menuOption = InputReader.getInt("Please enter a menu option");
 
-            while (menuOption <= 2)
-            {
                 System.out.println("What do you want to do? ");
 
                 System.out.println("1 Start Game " + System.lineSeparator() + "2 Exit");
@@ -40,8 +38,6 @@ public class Game
                 return menuOption;
             }
         }
-        return 0;
-    }
 
     public static void diceFour()
     {
