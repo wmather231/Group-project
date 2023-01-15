@@ -1,17 +1,19 @@
 import helpers.InputReader;
 
+import java.util.Random;
+
 
 public class Game
 {
-    public static int run()
 
+    public int run()
     {
-        private mainMenu;
 
         {
+
             int menuOption = InputReader.getInt("Please enter a menu option");
 
-            while (menuOption == 1 || 2)
+            while (menuOption <= 2)
             {
                 System.out.println("What do you want to do? ");
 
@@ -20,13 +22,13 @@ public class Game
 
 
 
-                switch (menuOption.get.menuOption)
+                switch (menuOption)
                 {
-                    case0:
-                    menuOption = 1;
+                    case 1:
+                        ;
 
-                    case1:
-                    menuOption = 2;
+                    case 2:
+                        ;
 
                     default:
                         System.out.println("Please enter a valid option");
@@ -41,6 +43,29 @@ public class Game
         return 0;
     }
 
-    System.out.println(dice)
+    public static void diceFour()
+    {
+        Random roll = new Random();
+        int diceFour = roll.nextInt(4) + 1;
+
+    }
+    public static void diceSix()
+    {
+        Random roll = new Random();
+        int diceSix= roll.nextInt(6) + 1;
+
+    }
+    public static void diceTen()
+    {
+        Random roll = new Random();
+        int diceTen = roll.nextInt(10) + 1;
+
+    }
+    public static void diceTwenty()
+    {
+        Random roll = new Random();
+        int diceTwenty = roll.nextInt(20) + 1;
+    }
+
 }
 

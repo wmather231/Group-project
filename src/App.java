@@ -1,16 +1,18 @@
-import Assessment.Assessment;
+package src;
 
-public class App
-{
-    public static void main(String[] args) throws Exception
-    {
+//import Game.Game;
 
+public class App {
+    public App() {
+    }
+
+    public static void main(String[] args) throws Exception {
         System.out.println("CO452 Programming Concepts 2022/23");
         System.out.println("==================================");
         System.out.println();
-        System.out.println(" by Joshua Mather");
+        System.out.println(" by William Mather");
         System.out.println();
-        Game game = new Game();
-        Game.run();
+        //Game app = new Game();
+        //app.run();
     }
 }
