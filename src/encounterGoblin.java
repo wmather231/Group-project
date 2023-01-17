@@ -6,5 +6,5 @@ import helpers.InputReader;
 public class encounterGoblin
 {
 
-    System.out.printline("You are attacked by a Goblin")
+   // System.out.println("You are attacked by a Goblin");
 }
