@@ -3,7 +3,7 @@ package src.DiceFighter;
 public class Goblin
 {
     /**
-    *This class holds the statistics for the Goblin enemy
+     *This class holds the statistics for the Goblin enemy
      * this class and functions will be called within the Goblin encounter class
     */
     private int armourClass = 15; //This value is how hard it is to hit the goblin
