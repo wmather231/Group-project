@@ -1,5 +1,4 @@
-package src;
-import helpers.InputReader;
+package src.DiceFighter;
 
 public class Goblin
 {

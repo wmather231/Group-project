@@ -1,4 +1,4 @@
-package src;
+package src.DiceFighter;
 
 import helpers.InputReader;
 
@@ -6,20 +6,19 @@ import java.util.Random;
 import helpers.InputReader;
 
 
-
 public class Game
 {
     //public static int run()
 
 
-        private mainMenu;
+        private int mainMenu;
         {
 
 
             System.out.println("What do you want to do? ");
             System.out.println("What do you want to do? ");
 
-            System.out.println("1 Start src.Game " + System.lineSeparator() + "2 Exit");
+            System.out.println("1 Start src.DiceFighter.Game " + System.lineSeparator() + "2 Exit");
 
             int menuOption = InputReader.getInt("Please enter a menu option");
 
@@ -30,7 +29,13 @@ public class Game
                 switch (menuOption)
                 {
                     case1:
-                    private class encounterGoblin =new encounterGoblin();
+                    public void firstEncounter();
+                    {
+
+                        encounterGoblin GoblinAttack;
+                        GoblinAttack = new encounterGoblin();
+                        encounterGoblin.beginEncounter();
+                    }
 
                     case2:
                     menuOption = 2;
@@ -44,7 +49,7 @@ public class Game
                 }
                 int menuCommand;
 
-                return menuOption;
+                //return menuOption;
             }
         }
 

@@ -2,6 +2,8 @@ package src;
 
 //import Game.Game;
 
+import src.DiceFighter.Game;
+
 public class App {
 
 
@@ -11,7 +13,7 @@ public class App {
         System.out.println();
         System.out.println(" by William Mather");
         System.out.println();
-        //src.Game app = new src.Game();
+        src.DiceFighter.Game app = new src.DiceFighter.Game();
        Game game = new Game();
        game.run();
     }
