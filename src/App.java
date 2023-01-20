@@ -15,6 +15,6 @@ public class App {
         System.out.println();
         src.DiceFighter.Game app = new src.DiceFighter.Game();
        Game game = new Game();
-       game.run();
+       game.runMainMenu();
     }
 }

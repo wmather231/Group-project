@@ -11,7 +11,7 @@ public class Game
     //public static int run()
 
 
-        private int mainMenu;
+        public void runMainMenu()
         {
 
 
@@ -28,16 +28,10 @@ public class Game
 
                 switch (menuOption)
                 {
-                    case1:
-                    public void firstEncounter();
-                    {
+                    case 1:
+                    firstEncounter();
 
-                        encounterGoblin GoblinAttack;
-                        GoblinAttack = new encounterGoblin();
-                        encounterGoblin.beginEncounter();
-                    }
-
-                    case2:
+                    case 2:
                     menuOption = 2;
                     System.out.println("Goodbye");
                     System.exit(0);
@@ -51,6 +45,7 @@ public class Game
 
                 //return menuOption;
             }
+
         }
 
 
@@ -62,6 +57,15 @@ public class Game
         int diceFour = roll.nextInt(4) + 1;
 
     }
+
+    public void firstEncounter()
+    {
+
+        encounterGoblin GoblinAttack;
+        GoblinAttack = new encounterGoblin();
+        encounterGoblin.beginEncounter();
+    }
+
     public static void diceSix() //simulates a six sided die
     {
         Random roll = new Random();
