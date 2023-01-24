@@ -14,7 +14,7 @@ public class Goblin
         {
         }
 
-    public Goblin()
+    public void Goblin()
     {
         this.armourClass = armourClass;
         this.health = health;
