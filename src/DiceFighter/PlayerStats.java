@@ -10,6 +10,8 @@ public class PlayerStats {
     private int playerAttackBonus = strength + dexterity; // this value is what the Player will add to its d20 roll in order to hit enemies
     public int damage = strength; // this value is how much the Player will reduce the players hp by on a hit
 
+    
+
 
     public PlayerStats()
     {
