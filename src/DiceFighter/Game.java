@@ -103,7 +103,6 @@ public class Game
         {
             System.out.println("What will you do?");
             userAction = helpers.InputReader.getInt("1 Attack " + System.lineSeparator() + "2 nothing");
-
             if (userAction == 1);
             {
                 diceTwenty();
