@@ -3,7 +3,8 @@ package src.DiceFighter;
 import helpers.InputReader;
 
 import java.util.Random;
-import helpers.InputReader;
+
+import src.Goblin;
 
 
 public class Game
@@ -77,20 +78,25 @@ public class Game
         int diceTen = roll.nextInt(10) + 1;
 
     }
-    public static void diceTwenty() //simulates a twenty sided die
+    public static int diceTwenty() //simulates a twenty sided die
     {
         Random roll = new Random();
         int diceTwenty = roll.nextInt(20) + 1;
+        return diceTwenty;
     }
 
     public void doNothing()
     {
         System.out.println("You goad the monster to attack you");
     }
-    public void attack()
+    public int attack()
     {
         diceTwenty();
+
+        return diceTwenty();
     }
+
+
     public void encounterGoblin()
     {
         while ((PlayerStats.health > 0) && (Goblin.health > 0))
@@ -101,10 +107,10 @@ public class Game
             if (userAction == 1);
             {
                 diceTwenty();
-                if (diceTwenty() >= Goblin.armourClass());
+                if (diceTwenty() >= Goblin.getArmourClass())
                 {
-                    diceTen();
-                    Goblin.health = Goblin.health - diceTen();
+                    diceSize = 10;
+                    Goblin.getHealth() = Goblin.getHealth() - diceRoller;
                 }
             }
         }
