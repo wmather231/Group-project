@@ -60,10 +60,8 @@ public class Game
 
     public void firstEncounter()
     {
-
-        encounterGoblin GoblinAttack;
-        GoblinAttack = new encounterGoblin();
-        encounterGoblin.beginEncounter();
+    System.out.println("A Goblin Attacks!");
+     encounterGoblin();
     }
 
     public static void diceSix() //simulates a six sided die
@@ -83,12 +81,31 @@ public class Game
         Random roll = new Random();
         int diceTwenty = roll.nextInt(20) + 1;
     }
+
+    public void doNothing()
+    {
+        System.out.println("You goad the monster to attack you");
+    }
+    public void attack()
+    {
+        diceTwenty();
+    }
     public void encounterGoblin()
     {
         while ((PlayerStats.health > 0) && (Goblin.health > 0))
         {
             System.out.println("What will you do?");
             userAction = helpers.InputReader.getInt("1 Attack " + System.lineSeparator() + "2 nothing");
+
+            if (userAction = Attack);
+            {
+                diceTwenty();
+                if (diceTwenty => Goblin.armourClass);
+                {
+                    diceTen();
+                    Goblin.health = Goblin.health - diceTen();
+                }
+            }
         }
     }
 
