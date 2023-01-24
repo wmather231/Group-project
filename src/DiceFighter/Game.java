@@ -12,7 +12,7 @@ public class Game
 
     public int run()
     {
-        private mainMenu ;
+
         {
 
             int menuOption = InputReader.getInt("Please enter a menu option");
@@ -22,22 +22,21 @@ public class Game
 
             System.out.println("1 Start Game " + System.lineSeparator() + "2 Exit");
 
-            int menuOption = InputReader.getInt("Please enter a menu option");
+
 
             while (menuOption == 1)
             {
 
-
                 switch (menuOption)
                 {
-                    case1:
-                    private class encounterGoblin =new encounterGoblin();
-
-                    case2:
-                    menuOption = 2;
-                    System.out.println("Goodbye");
-                    System.exit(0);
-
+                    case 1:
+                        class encounterGoblin goblinOne = new encounterGoblin();
+                        break;
+                    case 2:
+                        menuOption = 2;
+                        System.out.println("Goodbye");
+                        System.exit(0);
+                        break;
                     default:
                         System.out.println("Please enter a valid option");
                         break;
@@ -49,11 +48,13 @@ public class Game
             }
         }
 
-        public static void diceRoll ()
+        public int diceRoll()
         {
             Random roll = new Random();
             int diceSize;
             int diceRoller = roll.nextInt(diceSize) + 1;
+
+            return diceRoller;
         }
 
     }
