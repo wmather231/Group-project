@@ -83,5 +83,15 @@ public class Game
         Random roll = new Random();
         int diceTwenty = roll.nextInt(20) + 1;
     }
+    public void encounterGoblin()
+    {
+        while ((PlayerStats.health > 0) && (Goblin.health > 0))
+        {
+            System.out.println("What will you do?");
+            userAction = helpers.InputReader.getInt("1 Attack " + System.lineSeparator() + "2 nothing");
+        }
+    }
+
+
 }
 
