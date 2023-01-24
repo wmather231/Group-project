@@ -8,6 +8,7 @@ import helpers.InputReader;
 
 public class Game
 {
+    public int userAction;
     //public static int run()
 
 
@@ -100,7 +101,7 @@ public class Game
             if (userAction = Attack);
             {
                 diceTwenty();
-                if (diceTwenty => Goblin.armourClass);
+                if (diceTwenty() >= Goblin.armourClass());
                 {
                     diceTen();
                     Goblin.health = Goblin.health - diceTen();

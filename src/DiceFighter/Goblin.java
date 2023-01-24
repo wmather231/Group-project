@@ -16,11 +16,12 @@ public class Goblin
             game.diceFour();
         }
 
-   public Goblin()
-   {
-       this.armourClass = armourClass;
-       this.health = health;
-       this.attackBonus = attackBonus;
-   }
+    public Goblin()
+    {
+        this.armourClass = armourClass;
+        this.health = health;
+        this.attackBonus = attackBonus;
+    }
 
 }
+
