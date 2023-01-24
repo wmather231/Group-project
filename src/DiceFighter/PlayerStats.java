@@ -46,7 +46,7 @@ public class PlayerStats {
                     default:
                         System.out.println("Please pick a real option moron\n");
                 }
-                    else if (count == 1) {
+                    else if (count == 2) {
                         System.out.println("Where do you want your 1 stat to be?\n");
                         int playerOptions = InputReader.getInt("1. Dexterity\n 2. Strength\n 3. Constitution\n");
                         switch(playerOptions) {
@@ -64,6 +64,9 @@ public class PlayerStats {
                         if (dexterity == strength || strength == constitution || constitution == dexterity){
                             count = 0;
                             System.out.println("Please make sure stats don't overlap");
+                        }
+                        else {
+                            count = 3;
                         }
                 }
     }
