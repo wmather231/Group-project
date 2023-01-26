@@ -101,7 +101,8 @@ public class Game
                 System.out.println("The Goblin rolls " + goblinAttack);
                 if (goblinAttack >= PlayerStats.getPlayerArmourClass())
                 {
-                    playerHp = playerHp - (Dice.getDiceSix() + Goblin.getDamage());
+                    playerHp = playerHp - (Dice.getDiceFour() + Goblin.getDamage());
+                    System.out.println("\n Your HP is reduced to " + playerHp);
                     if (playerHp <= 0)
                     {
                         System.out.println("You died");
@@ -122,7 +123,7 @@ public class Game
 
         private void encounterDragon()
         {
-            System.out.println("A Dragon charges at you!");
+            System.out.println("\nA Dragon charges at you!");
         }
     }
 
