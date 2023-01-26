@@ -73,7 +73,7 @@ public class Game
             {
 
                 int playerAttackRoll = Dice.getDiceTwenty();
-                System.out.println("You attack! " + playerAttackRoll);
+                System.out.println("You attack! You rolled a " + playerAttackRoll);
                 if (playerAttackRoll >= Goblin.getArmourClass())
                          {
                           goblinHp = goblinHp - Dice.getDiceSix();
@@ -122,7 +122,7 @@ public class Game
                 }
             }
         }
-        }
+    }
 
         private void encounterDragon()
         {

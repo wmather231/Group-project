@@ -12,13 +12,14 @@ public class PlayerStats
     private static int playerAttackBonus = strength + dexterity; // this value is what the Player will add to its d20 roll in order to hit enemies
     public static int playerDamage = strength; // this value is how much the Player will reduce the players hp by on a hit
     public static int playerHealth = playerHealthMax;
-
+    private static String playerName = InputReader.getString("What is your name, hero?\n");
 
     public static void buildCharacter()
     {
         int count = 0;
         while (count <= 3)
         {
+            System.out.println("Dexterity will increase your bonus to hit and your armour class\n Strength will increase your bonus to hit and your damage\n Constitution will increase your max health");
             System.out.println("Choose where you want your stats to be");
             int playerOptions;
             if (count == 0)
@@ -145,6 +146,10 @@ public class PlayerStats
 
         return dexterity + constitution + strength;
 
+    }
+    public static String getPlayerName()
+    {
+        return playerName;
     }
 }
 
