@@ -50,14 +50,7 @@ public class Game
 
         }
 
-        public int diceRoll()
-        {
-            Random roll = new Random();
-            int diceSize;
-            int diceRoller = roll.nextInt(diceSize) + 1;
 
-            return diceRoller;
-        }
 
     public void firstEncounter()
     {
@@ -70,25 +63,25 @@ public class Game
     }
     public int attack()
     {
-        diceTwenty();
+        Dice.getDiceTwenty();
 
-        return diceTwenty();
+        return Dice.getDiceTwenty();
     }
 
 
     public void encounterGoblin()
     {
-        while ((PlayerStats.health > 0) && (Goblin.health > 0))
+        while ((PlayerStats.getPlayerHealth() > 0) && (Goblin.getHealth() > 0))
         {
             System.out.println("What will you do?");
             userAction = helpers.InputReader.getInt("1 Attack " + System.lineSeparator() + "2 nothing");
             if (userAction == 1);
             {
-                diceTwenty();
-                if (diceTwenty() >= Goblin.getArmourClass())
+
+                int playerAttackRoll = Dice.getDiceTen();
+                if (playerAttackRoll >= Goblin.getArmourClass())
                 {
-                    diceSize = 10;
-                    Goblin.getHealth() = Goblin.getHealth() - diceRoller;
+                    Goblin.getHealth() = Goblin.getHealth() - Dice.getDiceSix();
                 }
             }
         }

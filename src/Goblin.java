@@ -40,6 +40,7 @@ public class Goblin
         this.health = health;
         this.attackBonus = attackBonus;
 
+        return 0;
     }
 
 }
