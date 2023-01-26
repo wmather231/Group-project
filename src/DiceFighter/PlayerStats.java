@@ -3,19 +3,20 @@ import helpers.InputReader;
 public class PlayerStats
 {
 
+
     private static int strength; //will affect attackBonus
-    private int constitution; //will affect health
+    private static int constitution; //will affect health
     private static int dexterity; //will affect armourClass
     private static int playerArmourClass = 10 + dexterity; //This value is how hard it is to hit the Player
-    private int playerHealthMax = 10 + constitution; // this value is the total hp of the Player
+    private static int playerHealthMax = 10 + constitution; // this value is the total hp of the Player
     private static int playerAttackBonus = strength + dexterity; // this value is what the Player will add to its d20 roll in order to hit enemies
     public static int playerDamage = strength; // this value is how much the Player will reduce the players hp by on a hit
-    public static int playerHealth;
+    public static int playerHealth = playerHealthMax;
 
 
-    int count = 0;
-    private void buildCharacter()
+    public static void buildCharacter()
     {
+        int count = 0;
         while (count <= 3)
         {
             System.out.println("Choose where you want your stats to be");
@@ -85,8 +86,8 @@ public class PlayerStats
                     default:
                         System.out.println("Please pick a real option moron\n");
 
-                        }
-                    }
+                }
+            }
             else
             {
                 if (dexterity == strength || strength == constitution || constitution == dexterity)
@@ -96,15 +97,21 @@ public class PlayerStats
                 }
                 else
                 {
-                    count = 3;
+                    count = 4;
                 }
 
 
-
-                }
             }
-
         }
+        playerArmourClass = 10 + dexterity; //This value is how hard it is to hit the Player
+        playerHealthMax = 10 + constitution; // this value is the total hp of the Player
+        playerAttackBonus = strength + dexterity; // this value is what the Player will add to its d20 roll in order to hit enemies
+        playerDamage = strength; // this value is how much the Player will reduce the players hp by on a hit
+        playerHealth = playerHealthMax;
+
+        System.out.println("\nDexterity: " + dexterity + "\nStrength: " + strength + "\nconstitution: " + constitution);
+        System.out.println("\nArmour Class: " + playerArmourClass + "\nHealth: " + playerHealthMax + "\nAttack Bonus: " + playerAttackBonus + "\nDamage: 1d6 + " + playerDamage + "\n");
+    }
 
     public PlayerStats()
     {
@@ -112,7 +119,9 @@ public class PlayerStats
         this.playerHealthMax = playerHealthMax;
         this.playerAttackBonus = playerAttackBonus;
     }
-    public static int getPlayerArmourClass() {
+
+    public static int getPlayerArmourClass()
+    {
         return playerArmourClass;
     }
 
@@ -131,8 +140,11 @@ public class PlayerStats
         return playerHealth;
     }
 
-    public static void getBuildCharacter()
-    {}
-    }
+    public static int getBuildCharacter()
+    {
 
+        return dexterity + constitution + strength;
+
+    }
+}
 

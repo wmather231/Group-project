@@ -13,16 +13,13 @@ public class Game
 
         public void runMainMenu()
         {
-
-
-            System.out.println("What do you want to do? ");
             System.out.println("What do you want to do? ");
 
             System.out.println("1 Start src.DiceFighter.Game " + System.lineSeparator() + "2 Exit\n");
 
             //PlayerStats.getBuildCharacter();
 
-            int menuOption = InputReader.getInt("Please enter a menu option");
+            int menuOption = InputReader.getInt("Please enter a menu option\n");
 
             while (menuOption == 1)
             {
@@ -31,7 +28,8 @@ public class Game
                 switch (menuOption)
                 {
                     case 1:
-                    firstEncounter();
+
+                        firstEncounter();
 
                     case 2:
                     menuOption = 2;
@@ -54,6 +52,7 @@ public class Game
 
     private void firstEncounter()
     {
+        PlayerStats.buildCharacter();
         System.out.println("A Goblin Attacks!");
         encounterGoblin();
     }
