@@ -14,7 +14,7 @@ public class PlayerStats
 
 
     int count = 0;
-
+    private void buildCharacter()
     {
         while (count <= 3)
         {
@@ -105,6 +105,7 @@ public class PlayerStats
             }
 
         }
+
     public PlayerStats()
     {
         this.playerArmourClass = playerArmourClass;
@@ -129,6 +130,9 @@ public class PlayerStats
     {
         return playerHealth;
     }
+
+    public static void getBuildCharacter()
+    {}
     }
 
 

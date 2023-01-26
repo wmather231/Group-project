@@ -20,6 +20,8 @@ public class Game
 
             System.out.println("1 Start src.DiceFighter.Game " + System.lineSeparator() + "2 Exit\n");
 
+            //PlayerStats.getBuildCharacter();
+
             int menuOption = InputReader.getInt("Please enter a menu option");
 
             while (menuOption == 1)
@@ -70,7 +72,8 @@ public class Game
             if (userAction == 1)
             {
 
-                int playerAttackRoll = Dice.getDiceTen();
+                int playerAttackRoll = Dice.getDiceTwenty();
+                System.out.println("You attack! " + playerAttackRoll);
                 if (playerAttackRoll >= Goblin.getArmourClass())
                          {
                           goblinHp = goblinHp - Dice.getDiceSix();
@@ -78,6 +81,7 @@ public class Game
                           if (goblinHp <= 0);
                              {
                                  System.out.println("You slay the goblin");
+                                 encounterDragon();
                              }
 
                         }
@@ -95,12 +99,14 @@ public class Game
             {
                 System.out.println("The Goblin attacks!");
                 int goblinAttack = Dice.getDiceTwenty() + Goblin.getAttackBonus();
+                System.out.println("The Goblin rolls " + goblinAttack);
                 if (goblinAttack >= PlayerStats.getPlayerArmourClass())
                 {
                     playerHp = playerHp - (Dice.getDiceSix() + Goblin.getDamage());
                     if (playerHp <= 0)
                     {
                         System.out.println("You died");
+                        System.exit(0);
                     }
                     else
                     {
@@ -113,6 +119,11 @@ public class Game
                 }
             }
         }
+        }
+
+        private void encounterDragon()
+        {
+            System.out.println("A Dragon charges at you!");
         }
     }
 
