@@ -11,6 +11,8 @@ public class Game
     private int playerHp;
 
     private int dragonHp;
+    private int playerDamage = Dice.getDiceSix() + PlayerStats.playerDamage;
+    private int playerAttackRoll = Dice.getDiceTwenty() + PlayerStats.getPlayerAttackBonus();
 
         public void runMainMenu()
         {
@@ -18,7 +20,7 @@ public class Game
 
             System.out.println("1 Start src.DiceFighter.Game " + System.lineSeparator() + "2 Exit\n");
 
-            //PlayerStats.getBuildCharacter();
+
 
             int menuOption = InputReader.getInt("Please enter a menu option\n");
 
@@ -72,15 +74,15 @@ public class Game
             if (userAction == 1)
             {
 
-                int playerAttackRoll = Dice.getDiceTwenty();
+                //int playerAttackRoll = Dice.getDiceTwenty() + PlayerStats.getPlayerAttackBonus();
                 System.out.println("You attack! You rolled a " + playerAttackRoll);
                 if (playerAttackRoll >= Goblin.getArmourClass())
                          {
-                          goblinHp = goblinHp - Dice.getDiceSix();
-                          System.out.println("\nYou deal " + (Goblin.getHealth() - goblinHp + " damage"));
+                          goblinHp = goblinHp - playerDamage;
+                         System.out.println("\nYou deal " + playerDamage + " damage");
                           System.out.println("\nThe Goblin has " + goblinHp + "HP left");
 
-                          if (goblinHp <= 0)
+                          if (goblinHp < 1)
                              {
                                  System.out.println("You slay the goblin");
                                  encounterDragon();
@@ -89,12 +91,12 @@ public class Game
                         }
                 else
                 {
-                System.out.println("You missed the Goblin");
+                System.out.println(PlayerStats.getPlayerName() + " missed the Goblin");
                 }
             }
             else if (userAction == 2)
             {
-                System.out.println("You goad the monster to attack you");
+                System.out.println(PlayerStats.getPlayerName() + " goads the monster to attack them");
             }
 
             int goblinTurn;
@@ -107,18 +109,18 @@ public class Game
                     playerHp = playerHp - (Dice.getDiceFour() + Goblin.getDamage());
                     if (playerHp <= 0)
                     {
-                        System.out.println("You died");
+                        System.out.println(PlayerStats.getPlayerName() + " died");
                         System.exit(0);
                     }
                     else
                     {
-                        System.out.println("The goblin strikes you");
-                        System.out.println("\n Your HP is reduced to " + playerHp);
+                        System.out.println("The goblin strikes " + PlayerStats.getPlayerName());
+                        System.out.println("\n" + PlayerStats.getPlayerName() + "s' HP is reduced to " + playerHp);
                     }
                 }
                 else
                 {
-                    System.out.println("The Goblin misses you");
+                    System.out.println("The Goblin misses " + PlayerStats.getPlayerName());
                 }
             }
         }
@@ -126,7 +128,7 @@ public class Game
 
         private void encounterDragon()
         {
-            System.out.println("\nA Dragon charges at you!");
+            System.out.println("\nA Dragon charges at " + PlayerStats.getPlayerName() + "!");
 
             dragonHp = Dragon.getHealth();
             playerHp = PlayerStats.getPlayerHealth();
@@ -138,28 +140,28 @@ public class Game
                 if (userAction == 1)
                 {
 
-                    int playerAttackRoll = Dice.getDiceTwenty();
+                    //int playerAttackRoll = Dice.getDiceTwenty();
                     System.out.println("You attack! " + playerAttackRoll);
                     if (playerAttackRoll >= Dragon.getArmourClass())
                     {
-                        dragonHp = dragonHp - Dice.getDiceSix();
-                        System.out.println("\nYou deal " + (Dragon.getHealth() - dragonHp + " damage"));
+                        dragonHp = dragonHp - playerDamage;
+                        System.out.println("\n" + PlayerStats.getPlayerName() + " deals " + playerDamage + " damage");
                         System.out.println("\nThe Dragon has" + dragonHp + " HP left");
-                        if (dragonHp <= 0);
+                        if (dragonHp < 1)
                         {
-                            System.out.println("You slay the Dragon");
+                            System.out.println(PlayerStats.getPlayerName() + " slays the Dragon");
                             encounterEnd();
                         }
 
                     }
                     else
                     {
-                        System.out.println("You missed the Dragon");
+                        System.out.println(PlayerStats.getPlayerName() + " missed the Dragon");
                     }
                 }
                 else if (userAction == 2)
                 {
-                    System.out.println("You goad the monster to attack you");
+                    System.out.println(PlayerStats.getPlayerName() + " goads the monster to attack them");
                 }
 
                 int dragonTurn;  //The Dragon will now act
@@ -170,21 +172,21 @@ public class Game
                     if (dragonAttack >= PlayerStats.getPlayerArmourClass())
                     {
                         playerHp = playerHp - (Dice.getDiceTen() + Dragon.getDamage());
-                        System.out.println("\n Your HP is reduced to " + playerHp);
+
                         if (playerHp <= 0)
                         {
-                            System.out.println("You died");
+                            System.out.println(PlayerStats.getPlayerName() +  " died");
                             System.exit(0);
                         }
                         else
                         {
-                            System.out.println("The Dragon strikes you");
-                            System.out.println("\n Your HP is reduced to " + playerHp);
+                            System.out.println("The Dragon strikes " + PlayerStats.getPlayerName());
+                            System.out.println("\n" + PlayerStats.getPlayerName() +  "s' HP is reduced to " + playerHp);
                         }
                     }
                     else
                     {
-                        System.out.println("The Dragon misses you");
+                        System.out.println("The Dragon misses " + PlayerStats.getPlayerName());
                     }
                 }
             }

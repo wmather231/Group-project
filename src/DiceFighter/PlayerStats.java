@@ -12,10 +12,11 @@ public class PlayerStats
     private static int playerAttackBonus = strength + dexterity; // this value is what the Player will add to its d20 roll in order to hit enemies
     public static int playerDamage = strength; // this value is how much the Player will reduce the players hp by on a hit
     public static int playerHealth = playerHealthMax;
-    private static String playerName = InputReader.getString("What is your name, hero?\n");
+    private static String playerName;
 
     public static void buildCharacter()
     {
+         playerName = InputReader.getString("What is your name, hero?\n");
         int count = 0;
         while (count <= 3)
         {
