@@ -23,13 +23,13 @@ public class PlayerStats
         int count = 0;
         while (count <= 3)
         {
-            System.out.println("Dexterity will increase your bonus to hit and your armour class\n Strength will increase your bonus to hit and your damage\n Constitution will increase your max health");
-            System.out.println("Choose where you want your stats to be");
+            System.out.println("Dexterity will increase your bonus to hit and your armour class\n Strength will increase your bonus to hit and your damage\n Constitution will increase your max health\n");
+            System.out.println("Choose where you want your stats to be\n\n");
             int playerOptions;
             if (count == 0)
             {
-                System.out.println("Where do you want your 5 stat to be?\n");
-                playerOptions = InputReader.getInt("1. Dexterity\n 2. Strength\n 3. Constitution\n");
+                System.out.println("Where do you want your 5 stat to be?\n\n");
+                playerOptions = InputReader.getInt("1. Dexterity\n 2. Strength\n 3. Constitution\n\n");
                 switch (playerOptions)
                 {
                     case 1:
@@ -45,13 +45,13 @@ public class PlayerStats
                         count++;
                         break;
                     default:
-                        System.out.println("Please pick a real option moron\n");
+                        System.out.println("Please pick a real option moron\n\n");
                 }
             }
             else if (count == 1)
             {
-                System.out.println("Where do you want your 3 stat to be?\n");
-                playerOptions = InputReader.getInt("1. Dexterity\n 2. Strength\n 3. Constitution\n");
+                System.out.println("Where do you want your 3 stat to be?\n\n");
+                playerOptions = InputReader.getInt("1. Dexterity\n 2. Strength\n 3. Constitution\n\n");
                 switch (playerOptions)
                 {
                     case 1:
@@ -67,13 +67,13 @@ public class PlayerStats
                         count++;
                         break;
                     default:
-                        System.out.println("Please pick a real option moron\n");
+                        System.out.println("Please pick a real option moron\n\n");
                 }
             }
             else if (count == 2)
             {
-                System.out.println("Where do you want your 1 stat to be?\n");
-                playerOptions = InputReader.getInt("1. Dexterity\n 2. Strength\n 3. Constitution\n");
+                System.out.println("Where do you want your 1 stat to be?\n\n");
+                playerOptions = InputReader.getInt("1. Dexterity\n 2. Strength\n 3. Constitution\n\n");
                 switch (playerOptions)
                 {
                     case 1:
@@ -89,7 +89,7 @@ public class PlayerStats
                         count++;
                         break;
                     default:
-                        System.out.println("Please pick a real option moron\n");
+                        System.out.println("Please pick a real option moron\n\n");
 
                 }
             }
@@ -98,7 +98,7 @@ public class PlayerStats
                 if (dexterity == strength || strength == constitution || constitution == dexterity)
                 {
                     count = 0;
-                    System.out.println("Please make sure stats don't overlap");
+                    System.out.println("Please make sure stats don't overlap\n\n");
                 }
                 else
                 {
