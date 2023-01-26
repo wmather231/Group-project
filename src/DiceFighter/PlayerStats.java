@@ -1,17 +1,20 @@
 package src.DiceFighter;
 import helpers.InputReader;
+
+/**
+ * @author William
+ * Holds information about the player's and allows for customisation
+ */
 public class PlayerStats
 {
-
-
-    private static int strength; //will affect attackBonus
-    private static int constitution; //will affect health
-    private static int dexterity; //will affect armourClass
-    private static int playerArmourClass = 10 + dexterity; //This value is how hard it is to hit the Player
-    private static int playerHealthMax = 10 + constitution; // this value is the total hp of the Player
-    private static int playerAttackBonus = strength + dexterity; // this value is what the Player will add to its d20 roll in order to hit enemies
-    public static int playerDamage = strength; // this value is how much the Player will reduce the players hp by on a hit
-    public static int playerHealth = playerHealthMax;
+    private static int strength;
+    private static int constitution;
+    private static int dexterity;
+    private static int playerArmourClass = 10 + dexterity;
+    private static int playerHealthMax = 10 + constitution;
+    private static int playerAttackBonus = strength + dexterity;
+    public static int playerDamage = strength;
+    public static int playerHealth = 10 + constitution;
     private static String playerName;
 
     public static void buildCharacter()
@@ -151,6 +154,10 @@ public class PlayerStats
     public static String getPlayerName()
     {
         return playerName;
+    }
+    public static int getPlayerHealthMax()
+    {
+        return playerHealthMax;
     }
 }
 

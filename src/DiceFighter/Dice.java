@@ -1,9 +1,12 @@
 package src.DiceFighter;
 import java.util.Random;
 
+/**
+ * @author William
+ * Holds the random dice functions and allows them to be called to other classes
+ */
 public class Dice
 {
-
     public int diceRoll()
     {
         int diceTwenty;

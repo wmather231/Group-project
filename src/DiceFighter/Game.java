@@ -2,7 +2,11 @@ package src.DiceFighter;
 
 import helpers.InputReader;
 
-
+/**
+ * @author Joshua && William
+ * Where the game is stored and ran from
+ * contains the main menu and the encounters
+ */
 public class Game
 {
     public int userAction;
@@ -12,7 +16,7 @@ public class Game
 
     private int dragonHp;
     private int playerDamage = Dice.getDiceSix() + PlayerStats.playerDamage;
-    private int playerAttackRoll = Dice.getDiceTwenty() + PlayerStats.getPlayerAttackBonus();
+
 
         public void runMainMenu()
         {
@@ -44,9 +48,6 @@ public class Game
                         break;
 
                 }
-                int menuCommand;
-
-                //return menuOption;
             }
 
         }
@@ -68,19 +69,18 @@ public class Game
         playerHp = PlayerStats.getPlayerHealth();
         while ((playerHp > 0) || (goblinHp > 0))
         {
+            int playerAttackRoll = Dice.getDiceTwenty() + PlayerStats.getPlayerAttackBonus();
             System.out.println("What will you do?");
-            userAction = helpers.InputReader.getInt("1 Attack " + System.lineSeparator() + "2 nothing\n");
+            userAction = helpers.InputReader.getInt("1 Attack\n 2 nothing\n 3 Heal\n");
 
             if (userAction == 1)
             {
-
-                //int playerAttackRoll = Dice.getDiceTwenty() + PlayerStats.getPlayerAttackBonus();
                 System.out.println("You attack! You rolled a " + playerAttackRoll);
                 if (playerAttackRoll >= Goblin.getArmourClass())
                          {
                           goblinHp = goblinHp - playerDamage;
                          System.out.println("\nYou deal " + playerDamage + " damage");
-                          System.out.println("\nThe Goblin has " + goblinHp + "HP left");
+                          System.out.println("\nThe Goblin has " + goblinHp + "HP left\n");
 
                           if (goblinHp < 1)
                              {
@@ -98,8 +98,25 @@ public class Game
             {
                 System.out.println(PlayerStats.getPlayerName() + " goads the monster to attack them");
             }
+            else if (userAction == 3)
+            {
+                playerHp = playerHp + Dice.getDiceTen();
+                if (playerHp >= PlayerStats.getPlayerHealthMax())
+                {
+                    playerHp = PlayerStats.getPlayerHealthMax();
+                    System.out.println("Your health is max!\n");
+                }
+                else
+                {
+                    System.out.println(PlayerStats.getPlayerName() + " begins to heal...\n Their hp is now " + playerHp + "\n");
+                }
+            }
+            else {
 
-            int goblinTurn;
+                System.out.println("enter a valid command!\n");
+            }
+
+
             {
                 System.out.println("The Goblin attacks!");
                 int goblinAttack = Dice.getDiceTwenty() + Goblin.getAttackBonus();
@@ -134,13 +151,12 @@ public class Game
             playerHp = PlayerStats.getPlayerHealth();
             while ((playerHp > 0) || (goblinHp > 0))
             {
+                int playerAttackRoll = Dice.getDiceTwenty() + PlayerStats.getPlayerAttackBonus();
                 System.out.println("\nWhat will you do?");
-                userAction = helpers.InputReader.getInt("1 Attack " + System.lineSeparator() + "2 nothing\n");
+                userAction = helpers.InputReader.getInt("1 Attack\n 2 nothing\n 3 Heal\n");
 
                 if (userAction == 1)
                 {
-
-                    //int playerAttackRoll = Dice.getDiceTwenty();
                     System.out.println("You attack! " + playerAttackRoll);
                     if (playerAttackRoll >= Dragon.getArmourClass())
                     {
@@ -163,8 +179,24 @@ public class Game
                 {
                     System.out.println(PlayerStats.getPlayerName() + " goads the monster to attack them");
                 }
+                else if (userAction == 3)
+                {
+                    playerHp = playerHp + Dice.getDiceTen();
+                    if (playerHp >= PlayerStats.getPlayerHealthMax())
+                    {
+                        playerHp = PlayerStats.getPlayerHealthMax();
+                        System.out.println("Your health is max!\n");
+                    }
+                    else
+                    {
+                        System.out.println(PlayerStats.getPlayerName() + " begins to heal...\n Their hp is now " + playerHp + "\n");
+                    }
+                }
+                else {
+                    System.out.println("enter a valid command!\n");
+                }
 
-                int dragonTurn;  //The Dragon will now act
+
                 {
                     System.out.println("The Dragon attacks!");
                     int dragonAttack = Dice.getDiceTwenty() + Dragon.getAttackBonus();
