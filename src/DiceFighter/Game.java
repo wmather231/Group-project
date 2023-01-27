@@ -154,7 +154,7 @@ public class Game
 
     private void rest()
     {
-        int encounterRest = InputReader.getInt("Would you like to rest?");
+        int encounterRest = InputReader.getInt("Would you like to rest? if so press 1...\n");
 
         switch (encounterRest)
         {
