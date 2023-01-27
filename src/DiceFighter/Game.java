@@ -86,7 +86,7 @@ public class Game
                           if (goblinHp < 1)
                              {
                                  System.out.println("You slay the goblin");
-                                 encounterDragon();
+                                 rest();
                              }
 
                         }
@@ -99,7 +99,7 @@ public class Game
             {
                 System.out.println(PlayerStats.getPlayerName() + " goads the monster to attack them");
             }
-            else if (userAction == 3)
+            else if (userAction == 3 && healingPotion != 0)
             {
                 playerHp = playerHp + Dice.getDiceTen();
                 if (playerHp >= PlayerStats.getPlayerHealthMax())
@@ -107,11 +107,18 @@ public class Game
                     playerHp = PlayerStats.getPlayerHealthMax();
                     System.out.println("Your health is max!\n");
                 }
+
                 else
                 {
                     System.out.println(PlayerStats.getPlayerName() + " begins to heal...\n Their hp is now " + playerHp + "\n");
                 }
+
             }
+            else if (userAction == 3 && healingPotion == 0)
+            {
+                System.out.println("You do not have any potion left");
+            }
+
             else {
 
                 System.out.println("enter a valid command!\n");
@@ -167,10 +174,18 @@ public class Game
                         System.out.println("You find a healing potion\n it has 3 uses");
                         healingPotion = 3;
 
-
+                    case 3:
+                        d4Result = 3;
+                        System.out.println("You rest well for the night\n health raised to full");
+                        playerHp = PlayerStats.getPlayerHealthMax();
+                    case 4:
+                        d4Result = 4;
+                        System.out.println("Your rest for the night and are besotted with strange dreams\n You heal a small amount");
+                        playerHp = playerHp + Dice.getDiceFour();
                 }
 
         }
+        encounterDragon();
     }
 
 
