@@ -11,8 +11,7 @@ public class Goblin
    private static int health = 10;
    private static int attackBonus = 2;
     private static int damage = 2;
-        {
-        }
+
 
     public static int getArmourClass()
     {
