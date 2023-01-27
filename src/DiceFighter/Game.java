@@ -15,7 +15,7 @@ public class Game
     private int playerHp;
 
     private int dragonHp;
-    private int playerDamage = Dice.getDiceSix() + PlayerStats.playerDamage;
+    private int playerDamage;
 
     private int healingPotion = 0;
 
@@ -76,6 +76,7 @@ public class Game
 
             if (userAction == 1)
             {
+                playerDamage =  Dice.getDiceSix() + PlayerStats.playerDamage;
                 System.out.println("You attack! You rolled a " + playerAttackRoll);
                 if (playerAttackRoll >= Goblin.getArmourClass())
                          {
@@ -166,24 +167,31 @@ public class Game
                 {
                     case 1:
                         d4Result = 1;
-                        System.out.println("You find a magic sword!\n +2 to damage");
+                        System.out.println("You find a magic sword!\n +2 to damage\n");
                         playerDamage = playerDamage + 2;
+                        break;
 
                     case 2:
                         d4Result = 2;
-                        System.out.println("You find a healing potion\n it has 3 uses");
+                        System.out.println("You find a healing potion\n it has 3 uses\n");
                         healingPotion = 3;
+                        break;
 
                     case 3:
                         d4Result = 3;
-                        System.out.println("You rest well for the night\n health raised to full");
+                        System.out.println("You rest well for the night\n health raised to full\n");
                         playerHp = PlayerStats.getPlayerHealthMax();
+                        break;
+
                     case 4:
                         d4Result = 4;
-                        System.out.println("Your rest for the night and are besotted with strange dreams\n You heal a small amount");
+                        System.out.println("Your rest for the night and are besotted with strange dreams\n You heal a small amount\n");
                         playerHp = playerHp + Dice.getDiceFour();
+                        break;
                 }
-
+            case 2:
+                System.out.println(PlayerStats.getPlayerName() + "looks for trouble...\n");
+                break;
         }
         encounterDragon();
     }
@@ -206,6 +214,7 @@ public class Game
                     System.out.println("You attack! " + playerAttackRoll);
                     if (playerAttackRoll >= Dragon.getArmourClass())
                     {
+                        playerDamage =  Dice.getDiceSix() + PlayerStats.playerDamage;
                         dragonHp = dragonHp - playerDamage;
                         System.out.println("\n" + PlayerStats.getPlayerName() + " deals " + playerDamage + " damage");
                         System.out.println("\nThe Dragon has" + dragonHp + " HP left");

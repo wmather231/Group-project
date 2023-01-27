@@ -1,17 +1,16 @@
 package src.DiceFighter;
 import helpers.InputReader;
-
+/**
+ * @author Joshua
+ *This class holds the statistics for the Goblin enemy
+ * this class and functions will be called within the Goblin encounter
+ */
 public class Goblin
 {
-    /**
-     * @author Joshua
-     *This class holds the statistics for the Goblin enemy
-     * this class and functions will be called within the Goblin encounter
-    */
-    private static int armourClass = 13; //This value is how hard it is to hit the goblin
-   private static int health = 10; // this value is the total hp of the goblin
-   private static int attackBonus = 2; // this value is what the goblin will add to its d20 roll in order to hit the player
-    private static int damage = 2; // this value is how much the goblin will reduce the players hp by on a hit
+    private static int armourClass = 13;
+   private static int health = 10;
+   private static int attackBonus = 2;
+    private static int damage = 2;
         {
         }
 
