@@ -17,6 +17,7 @@ public class Game
     private int dragonHp;
     private int playerDamage = Dice.getDiceSix() + PlayerStats.playerDamage;
 
+    private int healingPotion = 0;
 
         public void runMainMenu()
         {
@@ -143,13 +144,43 @@ public class Game
         }
     }
 
+    private void rest()
+    {
+        int encounterRest = InputReader.getInt("Would you like to rest?");
+
+        switch (encounterRest)
+        {
+            case 1:
+                encounterRest = 1;
+
+                int d4Result = Dice.getDiceFour();
+
+                switch (d4Result)
+                {
+                    case 1:
+                        d4Result = 1;
+                        System.out.println("You find a magic sword!\n +2 to damage");
+                        playerDamage = playerDamage + 2;
+
+                    case 2:
+                        d4Result = 2;
+                        System.out.println("You find a healing potion\n it has 3 uses");
+                        healingPotion = 3;
+
+
+                }
+
+        }
+    }
+
+
         private void encounterDragon()
         {
             System.out.println("\nA Dragon charges at " + PlayerStats.getPlayerName() + "!");
 
             dragonHp = Dragon.getHealth();
             playerHp = PlayerStats.getPlayerHealth();
-            while ((playerHp > 0) || (goblinHp > 0))
+            while ((playerHp > 0) || (dragonHp > 0))
             {
                 int playerAttackRoll = Dice.getDiceTwenty() + PlayerStats.getPlayerAttackBonus();
                 System.out.println("\nWhat will you do?");
@@ -179,7 +210,7 @@ public class Game
                 {
                     System.out.println(PlayerStats.getPlayerName() + " goads the monster to attack them");
                 }
-                else if (userAction == 3)
+                else if (userAction == 3 && healingPotion != 0)
                 {
                     playerHp = playerHp + Dice.getDiceTen();
                     if (playerHp >= PlayerStats.getPlayerHealthMax())
@@ -191,6 +222,11 @@ public class Game
                     {
                         System.out.println(PlayerStats.getPlayerName() + " begins to heal...\n Their hp is now " + playerHp + "\n");
                     }
+
+                }
+                else if (userAction == 3 && healingPotion == 0)
+                {
+                    System.out.println("You do not have any potion left");
                 }
                 else {
                     System.out.println("enter a valid command!\n");
